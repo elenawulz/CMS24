@@ -1,0 +1,33 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
+
+
+##############
+#### PAGE ####
+##############
+
+page.config.contentObjectExceptionHandler = 0
+
+page {
+    includeCSS {
+        theme = EXT:autohaus/Resources/Public/Scss/Theme/theme.scss
+    }
+
+    includeJSLibs {
+
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+
+    }
+
+    includeJSFooter {
+        autohaus_scripts = EXT:autohaus/Resources/Public/JavaScript/Dist/scripts.js
+    }
+}

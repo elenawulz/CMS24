@@ -1,0 +1,60 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+
+############
+### PAGE ###
+############
+page {
+    logo {
+        file = EXT:autohaus/Resources/Public/Images/logo.svg
+        fileInverted = EXT:autohaus/Resources/Public/Images/logo-inverted.svg
+        height = 52
+        width = 192
+        alt = autohaus
+        linktitle = autohaus
+    }
+    favicon {
+        file = EXT:autohaus/Resources/Public/Icons/favicon.ico
+    }
+    fluidtemplate {
+        layoutRootPath = EXT:autohaus/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:autohaus/Resources/Private/Partials/Page/
+        templateRootPath = EXT:autohaus/Resources/Private/Templates/Page/
+    }
+}
+
+
+##################
+### EXTENSIONS ###
+##################
+plugin.bootstrap_package {
+    view {
+        layoutRootPath = EXT:autohaus/Resources/Private/Layouts/
+        partialRootPath = EXT:autohaus/Resources/Private/Partials/
+        templateRootPath = EXT:autohaus/Resources/Private/Templates/
+    }
+}
+
+
+########################
+### CONTENT ELEMENTS ###
+########################
+plugin.bootstrap_package_contentelements {
+    view {
+        layoutRootPath = EXT:autohaus/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:autohaus/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:autohaus/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+################################
+### BOOTSTRAP SCSS CONSTANTS ###
+################################
+plugin.bootstrap_package.settings.scss {
+    primary = #eb3e4a
+    secondary = #013859
+}
