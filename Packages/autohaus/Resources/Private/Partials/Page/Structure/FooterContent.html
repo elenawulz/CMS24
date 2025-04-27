@@ -1,0 +1,92 @@
+<!-- FooterContent.html -->
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<!-- Obere Footer-Sektion -->
+<section class="section footer-section footer-section-content">
+    <div class="container footer-content-container">
+        <div class="footer-info-grid">
+
+            <!-- links: Kontakt + Öffnungszeiten -->
+            <div class="footer-contact">
+                <h5>
+                    <f:translate key="LLL:EXT:autohaus/Resources/Private/Language/locallang_footer.xlf:footer.openingHours" />
+                </h5>
+                <ul class="opening-times">
+                    <li>
+              <span class="opening-day">
+                <f:translate key="LLL:EXT:autohaus/Resources/Private/Language/locallang_footer.xlf:footer.moFr" />
+              </span>
+                        <span class="opening-hours">8:00 – 12:00 Uhr | 13:00 – 17:00 Uhr</span>
+                    </li>
+                    <li>
+              <span class="opening-day">
+                <f:translate key="LLL:EXT:autohaus/Resources/Private/Language/locallang_footer.xlf:footer.sa" />
+              </span>
+                        <span class="opening-hours">8:30 – 12:00 Uhr</span>
+                    </li>
+                </ul>
+
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+4347822023">+43 4782 2023</a>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@autohaus-wulz.at">info@autohaus-wulz.at</a>
+                </p>
+            </div>
+
+            <!-- mitte: Service & Informationen -->
+            <div class="footer-links">
+                <h5>
+                    <f:translate key="LLL:EXT:autohaus/Resources/Private/Language/locallang_footer.xlf:footer.serviceInfo" />
+                </h5>
+                <ul>
+                    <li><a href="/kontakt">Kontakt</a></li>
+                    <li><a href="/mietwagenpreise">Mietwagenpreise</a></li>
+                    <li><a href="/impressum">Impressum</a></li>
+                    <li><a href="/datenschutz">Datenschutz</a></li>
+                </ul>
+            </div>
+
+            <!-- rechts: Social Icons + Language -->
+            <div class="footer-social">
+                <h5>
+                    <f:translate key="LLL:EXT:autohaus/Resources/Private/Language/locallang_footer.xlf:footer.followUs" />
+                </h5>
+                <ul class="sociallinks-list">
+                    <li>
+                        <a href="https://www.facebook.com/p/Autohaus-Wulz-GmbH-100063915365970/?locale=de_DE" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/autohaus_wulz" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-language">
+            <f:render partial="Navigation/Language" arguments="{_all}" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- untere Footer-Leiste -->
+<section class="section footer-section footer-section-bottom">
+    <div class="container">
+        <div class="footer-bottom-inner text-center">
+            <p class="mb-0">
+                <f:translate
+                    key="LLL:EXT:autohaus/Resources/Private/Language/locallang_footer.xlf:footer.copyright">
+                    <arguments>
+                        <argument name="year">{f:format.date(date:'now', format:'Y')}</argument>
+                    </arguments>
+                </f:translate>
+            </p>
+        </div>
+    </div>
+</section>
+</html>

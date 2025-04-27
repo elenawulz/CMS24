@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" date="2025-04-26T00:00:00Z">
+    <body>
+      <trans-unit id="footer.openingHours">
+        <source>Opening Hours</source>
+      </trans-unit>
+      <trans-unit id="footer.moFr">
+        <source>Mon – Fri</source>
+      </trans-unit>
+      <trans-unit id="footer.sa">
+        <source>Sat</source>
+      </trans-unit>
+      <trans-unit id="footer.serviceInfo">
+        <source>Services &amp; Information</source>
+      </trans-unit>
+      <trans-unit id="footer.followUs">
+        <source>Follow Us</source>
+      </trans-unit>
+      <trans-unit id="footer.copyright">
+        <source>© 2025 Autohaus Wulz GmbH</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,42 @@
+
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+
+<f:if condition="{data.tx_mask_flipcardelements}">
+    <div class="frame-container frame-container-default">
+        <div class="frame-inner">
+            <div class="flipcards-wrapper">
+                <f:for each="{data.tx_mask_flipcardelements}" as="data_item">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <!-- Vorderseite: Icon & Titel -->
+                            <div class="flip-card-front">
+                                <f:if condition="{data_item.tx_mask_flipcardicon}">
+                                    <f:for each="{data_item.tx_mask_flipcardicon}" as="file">
+                                        <f:image image="{file}" width="200" class="flip-card-icon" alt="{file.alternative}" />
+                                    </f:for>
+                                </f:if>
+                                <f:if condition="{data_item.tx_mask_flipcardtitle}">
+                                    <h3 class="flip-card-title">
+                                        {data_item.tx_mask_flipcardtitle -> f:format.html()}
+                                    </h3>
+                                </f:if>
+                            </div>
+                            <!-- Rückseite: Beschreibung -->
+                            <div class="flip-card-back">
+                                <f:if condition="{data_item.tx_mask_flipcarddescription}">
+                                    <div class="flip-card-description">
+                                        <f:format.html>
+                                            {data_item.tx_mask_flipcarddescription}
+                                        </f:format.html>
+                                    </div>
+                                </f:if>
+                            </div>
+
+                        </div>
+                    </div>
+                </f:for>
+            </div>
+        </div>
+    </div>
+</f:if>

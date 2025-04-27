@@ -1,0 +1,31 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<div class="swiper-slide">
+    <div class="news-item">
+        <!-- Bild -->
+        <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+            <f:if condition="{newsItem.mediaPreviews}">
+                <f:then>
+                    <f:media class="img-fluid" file="{newsItem.mediaPreviews.0}" alt="{newsItem.mediaPreviews.0.originalResource.alternative}" />
+                </f:then>
+                <f:else>
+                    <f:image class="img-fluid" src="{settings.list.media.dummyImage}" alt="Kein Bild verfügbar" />
+                </f:else>
+            </f:if>
+        </n:link>
+
+        <!-- Titel -->
+        <h3>
+            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+                {newsItem.title}
+            </n:link>
+        </h3>
+
+        <!-- Datum -->
+        <p>
+            <f:format.date date="{newsItem.datetime}" format="d.m.Y" />
+        </p>
+    </div>
+</div>
+</html>

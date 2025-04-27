@@ -3,6 +3,7 @@
 ######################
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
 
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:go-maps-ext/Configuration/TypoScript/constants.typoscript">
 
 ############
 ### PAGE ###
@@ -57,4 +58,12 @@ plugin.bootstrap_package_contentelements {
 plugin.bootstrap_package.settings.scss {
     primary = #eb3e4a
     secondary = #013859
+}
+
+#news
+plugin.tx_news.view.twb5{
+    templateRootPath = EXT:autohaus/Resources/Private/Templates/
+    partialRootPath = EXT:autohaus/Resources/Private/Partials/
+    layoutRootPath = EXT:autohaus/Resources/Private/Layouts/
+
 }

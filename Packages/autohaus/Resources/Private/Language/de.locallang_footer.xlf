@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="messages">
+    <header>
+      <authorName>Elena Wulz</authorName>
+      <authorEmail>s2310456036@fhooe.at</authorEmail>
+    </header>
+    <body>
+      <trans-unit id="footer.openingHours">
+        <source>Opening Hours</source>
+        <target>Öffnungszeiten</target>
+      </trans-unit>
+      <trans-unit id="footer.moFr">
+        <source>Mon – Fri</source>
+        <target>Mo – Fr</target>
+      </trans-unit>
+      <trans-unit id="footer.sa">
+        <source>Sat</source>
+        <target>Sa</target>
+      </trans-unit>
+      <trans-unit id="footer.serviceInfo">
+        <source>Services &amp; Information</source>
+        <target>Service &amp; Informationen</target>
+      </trans-unit>
+      <trans-unit id="footer.followUs">
+        <source>Follow Us</source>
+        <target>Folgen Sie uns</target>
+      </trans-unit>
+      <trans-unit id="footer.copyright">
+        <source>© 2025 Autohaus Wulz GmbH</source>
+        <target>© 2025 Autohaus Wulz GmbH</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

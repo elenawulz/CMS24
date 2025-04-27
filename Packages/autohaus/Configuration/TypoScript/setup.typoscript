@@ -1,21 +1,63 @@
 ######################
 #### DEPENDENCIES ####
 ######################
+
+#MASK
+@import 'EXT:mask/Configuration/TypoScript/setup.typoscript'
+
+
+#NEWS
+@import 'EXT:news/Configuration/TypoScript/setup.typoscript'
+@import 'EXT:news/Configuration/TypoScript/Styles/Twb5/setup.typoscript'
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
 
+# Go! Maps Ext: Konstanten und Setup einbinden
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:go-maps-ext/Configuration/TypoScript/constants.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:go-maps-ext/Configuration/TypoScript/setup.typoscript">
 
+@import 'EXT:google-reviews/Configuration/TypoScript/setup.typoscript'
 ##############
 #### PAGE ####
 ##############
 
 page.config.contentObjectExceptionHandler = 0
 
+
+
 page {
+    # ganz oben
+    headerData {
+        100 = TEXT
+        100.value (
+      <script src="https://kit.fontawesome.com/48bdc6f679.js" crossorigin="anonymous"></script>
+        )
+    }
     includeCSS {
         theme = EXT:autohaus/Resources/Public/Scss/Theme/theme.scss
+
+
     }
 
-    includeJSLibs {
+}
+
+plugin.tx_bootstrappackage {
+    view {
+        # eigene Pfade an den Anfang hängen (je niedriger die Zahl, desto höher die Priorität)
+        layoutRootPaths {
+            10 = EXT:autohaus/Resources/Private/Layouts/
+        }
+        partialRootPaths {
+            10 = EXT:autohaus/Resources/Private/Partials/
+        }
+        templateRootPaths {
+            10 = EXT:autohaus/Resources/Private/Templates/
+        }
+    }
+}
+
+
+
+includeJSLibs {
 
     }
 
@@ -31,3 +73,25 @@ page {
         autohaus_scripts = EXT:autohaus/Resources/Public/JavaScript/Dist/scripts.js
     }
 }
+
+lib.maskContentElement {
+    templateRootPaths {
+        5 = EXT:bootstrap_package/Resources/Private/Templates/ContentElements
+    }
+    partialRootPaths {
+        5 = EXT:bootstrap_package/Resources/Private/Partials/ContentElements
+    }
+    layoutRootPaths {
+        5 = EXT:bootstrap_package/Resources/Private/Layouts/ContentElements
+    }
+}
+
+page.includeJSFooter.newsSlider = EXT:autohaus/Resources/Public/JavaScript/news-slider.js
+
+page.includeJSFooterlibs.swiper = https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
+page.includeCSS.swiper = https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
+
+page.includeJSFooter.canFlipcards = EXT:autohaus/Resources/Public/JavaScript/flipcards.js
+
+plugin.tx_bootstrappackage.settings.theme.language.enable = 0
+

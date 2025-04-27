@@ -1,0 +1,29 @@
+<!-- TeamCards.html -->
+<f:if condition="{data.tx_mask_members}">
+    <div class="team-cards">
+        <f:for each="{data.tx_mask_members}" as="member">
+            <div class="team-card">
+                <!-- Bild -->
+                <f:if condition="{member.tx_mask_memberimage.0}">
+                    <f:image
+                        image="{member.tx_mask_memberimage.0}"
+                        alt="{member.tx_mask_memberimage.0.alternative}"
+                        class="team-card__image"
+                        width="300" />
+                </f:if>
+                <!-- Name -->
+                <f:if condition="{member.tx_mask_membername}">
+                    <h3 class="team-card__name">
+                        {member.tx_mask_membername}
+                    </h3>
+                </f:if>
+                <!-- Telefon -->
+                <f:if condition="{member.tx_mask_memberphone}">
+                    <div class="team-card__phone">
+                        <i class="fas fa-phone"></i> {member.tx_mask_memberphone}
+                    </div>
+                </f:if>
+            </div>
+        </f:for>
+    </div>
+</f:if>

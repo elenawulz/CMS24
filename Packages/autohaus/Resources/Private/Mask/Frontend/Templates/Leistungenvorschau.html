@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:layout name="General" />
+
+<f:section name="Main">
+    <div class="services-overview">
+        <div class="services-line"> </div>
+
+        <div class="services-heading">
+            <h2>{data.tx_mask_header}</h2>
+        </div>
+
+        <div class="services-list">
+            <f:for each="{data.tx_mask_services}" as="service">
+                <div class="service">
+                    <f:if condition="{service.tx_mask_serviceicon.0}">
+                        <f:media
+                            file="{service.tx_mask_serviceicon.0}"
+                            class="service-icon"
+                            alt="{service.tx_mask_serviceicon.0.originalResource.alternative}" />
+                    </f:if>
+                    <f:if condition="{service.tx_mask_servicetitle}">
+              <span class="service-title">
+                {service.tx_mask_servicetitle}
+              </span>
+                    </f:if>
+                </div>
+            </f:for>
+        </div>
+
+        <f:if condition="{data.tx_mask_buttonlink}">
+            <div class="services-button">
+                <f:link.typolink parameter="{data.tx_mask_buttonlink}">
+                    <span class="services-button__icon">➔</span>
+                </f:link.typolink>
+                <f:if condition="{data.tx_mask_buttontext}">
+                    <div class="services-button__text">
+                        {data.tx_mask_buttontext}
+                    </div>
+                </f:if>
+            </div>
+        </f:if>
+
+        <div class="services-line">  </div>
+    </div>
+</f:section>
+</html>

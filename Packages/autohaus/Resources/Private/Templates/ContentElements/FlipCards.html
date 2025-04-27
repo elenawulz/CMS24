@@ -1,0 +1,22 @@
+<!-- FlipCards.html -->
+<div class="flipcards-wrapper">
+    <f:if condition="{data.flipcards}">
+        <f:for each="{data.flipcards}" as="card">
+            <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+                <div class="flip-card-inner">
+                    <!-- Vorderseite -->
+                    <div class="flip-card-front">
+                        <f:if condition="{card.flipcardicon}">
+                            <f:image image="{card.flipcardicon}" alt="{card.flipcardtitle}" class="flip-card-icon" />
+                        </f:if>
+                        <h3 class="flip-card-title">{card.flipcardtitle}</h3>
+                    </div>
+                    <!-- Rückseite -->
+                    <div class="flip-card-back">
+                        <p class="flip-card-description">{card.flipcarddescription}</p>
+                    </div>
+                </div>
+            </div>
+        </f:for>
+    </f:if>
+</div>
