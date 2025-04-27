@@ -5,7 +5,6 @@
 #MASK
 @import 'EXT:mask/Configuration/TypoScript/setup.typoscript'
 
-
 #NEWS
 @import 'EXT:news/Configuration/TypoScript/setup.typoscript'
 @import 'EXT:news/Configuration/TypoScript/Styles/Twb5/setup.typoscript'
@@ -15,7 +14,9 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:go-maps-ext/Configuration/TypoScript/constants.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:go-maps-ext/Configuration/TypoScript/setup.typoscript">
 
+#Google Reviews
 @import 'EXT:google-reviews/Configuration/TypoScript/setup.typoscript'
+
 ##############
 #### PAGE ####
 ##############
@@ -59,7 +60,7 @@ plugin.tx_bootstrappackage {
 
 includeJSLibs {
 
-    }
+
 
     includeJS {
 
@@ -94,4 +95,5 @@ page.includeCSS.swiper = https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.mi
 page.includeJSFooter.canFlipcards = EXT:autohaus/Resources/Public/JavaScript/flipcards.js
 
 plugin.tx_bootstrappackage.settings.theme.language.enable = 0
+
 

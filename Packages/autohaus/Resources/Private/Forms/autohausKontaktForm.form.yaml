@@ -1,0 +1,230 @@
+
+renderingOptions:
+  submitButtonLabel: Absenden
+type: Form
+identifier: autohausKontaktForm
+label: AutohausKontaktForm
+prototypeName: standard
+finishers:
+  -
+    options:
+      message: 'Vielen Dank, Ihre Nachricht wurde erfolgreich gesendet!'
+      contentElementUid: ''
+    identifier: Confirmation
+  -
+    options:
+      subject: 'Vielen Dank für Ihre Nachricht {radiobutton-2} {text-1} {text-2}'
+      recipients:
+        '{email-1}': '{text-2}'
+      senderAddress: s2310456036@students.fh-hagenberg.at
+      senderName: 'Autohaus Wulz GmbH'
+      addHtmlPart: true
+      attachUploads: true
+      title: 'Autohaus Wulz Anfrage'
+    identifier: EmailToSender
+  -
+    options:
+      subject: 'Neue Nachricht'
+      recipients:
+        s2310456036@students.fh-hagenberg.at: ''
+      senderAddress: '{email-1}'
+      senderName: '{text-2}'
+      addHtmlPart: true
+      attachUploads: true
+      translation:
+        language: Default
+      title: ''
+    identifier: EmailToReceiver
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: Zurück
+      nextButtonLabel: Weiter
+    type: Page
+    identifier: page-1
+    label: ''
+    renderables:
+      -
+        type: GridColumn
+        identifier: gridcolumn-3
+        label: 'Grid: Column'
+        renderables:
+          -
+            properties:
+              text: ''
+            type: StaticText
+            identifier: statictext-2
+            label: Anrede
+          -
+            properties:
+              options:
+                Herr: Herr
+                Frau: Frau
+                Divers: Divers
+              fluidAdditionalAttributes:
+                required: required
+            type: RadioButton
+            identifier: radiobutton-2
+            label: Anrede
+            validators:
+              -
+                identifier: NotEmpty
+      -
+        type: GridRow
+        identifier: gridrow-1
+        label: 'Grid: Row'
+        renderables:
+          -
+            type: GridColumn
+            identifier: gridcolumn-1
+            label: ''
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  sm:
+                    numbersOfColumnsToUse: '12'
+            renderables:
+              -
+                defaultValue: ''
+                type: Text
+                identifier: text-1
+                label: Vorname
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                  validationErrorMessages:
+                    -
+                      code: 1221560910
+                      message: 'Bitte geben Sie einen Vornamen an.'
+                    -
+                      code: 1221560718
+                      message: 'Bitte geben Sie einen Vornamen an.'
+                    -
+                      code: 1347992400
+                      message: 'Bitte geben Sie einen Vornamen an.'
+                    -
+                      code: 1347992453
+                      message: 'Bitte geben Sie einen Vornamen an.'
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                defaultValue: ''
+                type: Email
+                identifier: email-1
+                label: E-Mail-Adresse
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                  validationErrorMessages:
+                    -
+                      code: 1221560910
+                      message: 'Bitte geben Sie eine E-Mail-Adresse an.'
+                    -
+                      code: 1221560718
+                      message: 'Bitte geben Sie eine E-Mail-Adresse an.'
+                    -
+                      code: 1347992400
+                      message: 'Bitte geben Sie eine E-Mail-Adresse an.'
+                    -
+                      code: 1347992453
+                      message: 'Bitte geben Sie eine E-Mail-Adresse an.'
+                validators:
+                  -
+                    identifier: EmailAddress
+                  -
+                    identifier: NotEmpty
+          -
+            type: GridColumn
+            identifier: gridcolumn-2
+            label: ''
+            properties:
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  sm:
+                    numbersOfColumnsToUse: '12'
+            renderables:
+              -
+                defaultValue: ''
+                type: Text
+                identifier: text-2
+                label: Nachname
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                  validationErrorMessages:
+                    -
+                      code: 1221560910
+                      message: 'Bitte geben Sie einen Nachnamen an.'
+                    -
+                      code: 1221560718
+                      message: 'Bitte geben Sie einen Nachnamen an.'
+                    -
+                      code: 1347992400
+                      message: 'Bitte geben Sie einen Nachnamen an.'
+                    -
+                      code: 1347992453
+                      message: 'Bitte geben Sie einen Nachnamen an.'
+                validators:
+                  -
+                    identifier: NotEmpty
+              -
+                defaultValue: ''
+                type: Telephone
+                identifier: telephone-1
+                label: Telefonnummer
+                properties:
+                  fluidAdditionalAttributes:
+                    required: required
+                  validationErrorMessages:
+                    -
+                      code: 1221560910
+                      message: 'Bitte geben Sie eine Telefonnummer an.'
+                    -
+                      code: 1221560718
+                      message: 'Bitte geben Sie eine Telefonnummer an.'
+                    -
+                      code: 1347992400
+                      message: 'Bitte geben Sie eine Telefonnummer an.'
+                    -
+                      code: 1347992453
+                      message: 'Bitte geben Sie eine Telefonnummer an.'
+                validators:
+                  -
+                    identifier: NotEmpty
+      -
+        properties:
+          options:
+            Terminanfrage: Terminanfrage
+            Fahrzeuganfrage: Fahrzeuganfrage
+            Werkstattanfrage: Werkstattanfrage
+            Sonstiges: Sonstiges
+          prependOptionLabel: Terminanfrage
+        type: SingleSelect
+        identifier: singleselect-1
+        label: 'Ihr Anliegen'
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: 'Ihre Nachricht'
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+            minlength: '10'
+            maxlength: '1000'
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            options:
+              minimum: '10'
+              maximum: '1000'
+            identifier: StringLength
+  -
+    renderingOptions:
+      previousButtonLabel: Zurück
+      nextButtonLabel: Weiter
+    type: SummaryPage
+    identifier: summarypage-1
+    label: Zusammenfassung
